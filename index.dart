@@ -102,7 +102,7 @@ String weatherChecker(int weatherinC) {
 
 // question 6 Vowel Checker
 String vowelChecker(String alphabet) {
-  Iterable vowel = ['a', 'e', 'i', 'o', 'u'];
+  List<String> vowel = ['a', 'e', 'i', 'o', 'u'];
   var result = 'Consonent';
   for (String vw in vowel) {
     if (vw == alphabet) {
