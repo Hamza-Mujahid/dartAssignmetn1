@@ -13,56 +13,30 @@
 // Q12: Write a program to convert Celsius  to Fahrenheit   .
 // i.e: Temperature in degrees Fahrenheit (°F) = (Temperature in degrees Celsius (°C) * 9/5) + 32
 
-void main() {
-//   question 1 square rectangle differentiator
-  var length = 22;
-  var breath = 22;
+import 'dart:ffi';
+import 'dart:io';
 
+// Question 1 square rectangle differentiator
+String differentiator(num length, num breath) {
   if (length == breath) {
-    print('Square');
+    return 'Square';
   } else {
-    print('Rectangle');
+    return 'Rectangle';
   }
-
-//  question 2 age checker
-  var age1 = 22;
-  var age2 = 23;
-
-  if (age1 >= age2) {
-    print('boy1 is older');
-  } else if (age1 <= age2) {
-    print('boy2 is older');
-  }
-
-  var presentDays = 36;
-  var total = 50;
-  print(attendanceChecker(presentDays, total));
-
-  var year = 2019;
-  print(leapYearChecker(year));
-
-  var weather = 30;
-  print(weatherChecker(weather));
-
-  var alphabet = 'i';
-  print(vowelChecker(alphabet));
-
-  var name = "James";
-  num id = 1001;
-  int unitsConsumed = 800;
-  var charges = billCharges(unitsConsumed);
-  var billAmount = charges * unitsConsumed;
-
-  print({
-    "Consumer name": name,
-    "Consumer IDNO": id,
-    "Units Consumed": unitsConsumed,
-    "Charges": '@Rs. $charges per unit: $billAmount',
-    "Net Bill Amount": billAmount
-  });
 }
 
-// question 3 attendance checker
+// Question 2 Age Checker
+String ageChecker(num age1, num age2) {
+  if (age1 >= age2) {
+    return 'boy1 is older';
+  } else if (age1 <= age2) {
+    return 'boy2 is older';
+  } else {
+    return 'both are same age';
+  }
+}
+
+// Question 3 attendance checker
 String attendanceChecker(int present, int total) {
   num attendance = (present / total) * 100;
   if (attendance <= 75) {
@@ -72,7 +46,7 @@ String attendanceChecker(int present, int total) {
   }
 }
 
-// question 4 leap year checker
+// Question 4 leap year checker
 String leapYearChecker(int year) {
   if (year % 4 == 0) {
     return 'Leap Year';
@@ -81,7 +55,7 @@ String leapYearChecker(int year) {
   }
 }
 
-// question 5 weather Checker
+// Question 5 weather Checker
 String weatherChecker(int weatherinC) {
   if (weatherinC < 0) {
     return "Freezing Weather";
@@ -100,7 +74,7 @@ String weatherChecker(int weatherinC) {
   }
 }
 
-// question 6 Vowel Checker
+// Question 6 Vowel Checker
 String vowelChecker(String alphabet) {
   List<String> vowel = ['a', 'e', 'i', 'o', 'u'];
   var result = 'Consonent';
@@ -113,7 +87,7 @@ String vowelChecker(String alphabet) {
   return result;
 }
 
-// question 7 Electtricity Bill Checker
+// Question 7 Electtricity Bill Checker
 double billCharges(int unit) {
   if (unit < 200) {
     return 1.20;
@@ -126,13 +100,87 @@ double billCharges(int unit) {
   }
 }
 
-// question 8 Mark sheet
-class marksheet {
-  // selecting data type
-  String name;
-  num rollNumber;
-  List<String> subjects;
-  List<num> numbers;
-  
+// // Question 8 Mark sheet
+// num getResult(int marks) {
+
+// }
+
+// Question 9 Even Odd Checker
+String evenOddChecker(int number) {
+  if (number % 2 == 0) {
+    if (number % 5 == 0) {
+      return 'Number is Even and also divisble by 5';
+    } else {
+      return 'Number is Even but divisble by 5';
+    }
+  } else {
+    if (number % 7 == 0) {
+      return 'Number is Odd and also divisble by 7';
+    } else {
+      return 'Number is Odd but divisble by 7';
+    }
+  }
+}
+
+// Question 10 Highest lowest Checker
+String? highLowChecker(num num1, num num2, num num3) {
+  List<num> numbers = [num1, num2, num3];
+  for (int i = 0; i < numbers.length; i++) {
+    if (numbers[0] > numbers[i]) {
+      return '$num1 is the biggest number';
+    } else if (numbers[1] > numbers[i]) {
+      return '$num2 is the biggest number';
+    } else if (numbers[2] > numbers[i]) {
+      return '$num3 is the biggest number';
+    }
+  }
+}
+
+void main() {
+  print("Question 1 Square Rectangle Checker");
+  print("Enter Length");
+  int? length = int.parse(stdin.readLineSync()!);
+  print("Enter Breath");
+  int? breath = int.parse(stdin.readLineSync()!);
+  print(differentiator(length, breath));
+
+//  Question 2 age checker
+  double age1 = 665;
+  double age2 = 23;
+
+  print(ageChecker(age1, age2));
+
+  int presentDays = 46;
+  int total = 50;
+  print(attendanceChecker(presentDays, total));
+
+  int year = 2024;
+  print(leapYearChecker(year));
+
+  var weather = -45;
+  print(weatherChecker(weather));
+
+  var alphabet = 'i';
+  print(vowelChecker(alphabet));
+
+  var name = "James";
+  num id = 1001;
+  int unitsConsumed = 800;
+  var charges = billCharges(unitsConsumed);
+  var billAmount = charges * unitsConsumed;
+
+  print({
+    "Consumer name": name + '\n',
+    "Consumer IDNO": id.toString() + '\n',
+    "Units Consumed": unitsConsumed.toString() + '\n',
+    "Charges": '@Rs. $charges per unit: $billAmount' + '\n',
+    "Net Bill Amount": billAmount
+  });
+
+  num num1 = 15;
+  int num2 = 20;
+  double num3 = 5;
+  print(highLowChecker(num1, num2, num3));
+
 
 }
