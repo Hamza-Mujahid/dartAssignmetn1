@@ -1,3 +1,18 @@
+// ASSIGNMENT 01
+
+// Q8: Create a marksheet using operators of at least 5 subjects and output should have Student Name, Student Roll Number, Class, Percentage, Grade Obtained etc.
+// i.e: Percentage should be rounded upto 2 decimal places only.
+
+// Q9: Check if the number is even or odd, If number is even then check if this is divisible by 5 or not & if number is odd then check if this is divisible by 7 or not.
+
+// Q10: Write a program that takes three numbers from the user and prints the greatest number & lowest number.
+
+// Q11: Write a program to calculate root of any number.
+// i.e: √y = y½
+
+// Q12: Write a program to convert Celsius  to Fahrenheit   .
+// i.e: Temperature in degrees Fahrenheit (°F) = (Temperature in degrees Celsius (°C) * 9/5) + 32
+
 void main() {
 //   question 1 square rectangle differentiator
   var length = 22;
@@ -33,8 +48,8 @@ void main() {
   print(vowelChecker(alphabet));
 
   var name = "James";
-  var id = 1001;
-  var unitsConsumed = 800;
+  num id = 1001;
+  int unitsConsumed = 800;
   var charges = billCharges(unitsConsumed);
   var billAmount = charges * unitsConsumed;
 
@@ -49,7 +64,7 @@ void main() {
 
 // question 3 attendance checker
 String attendanceChecker(int present, int total) {
-  var attendance = (present / total) * 100;
+  num attendance = (present / total) * 100;
   if (attendance <= 75) {
     return ('you are not allowed to attend the exam because your attendance is ${attendance.toString()}%');
   } else {
@@ -87,9 +102,9 @@ String weatherChecker(int weatherinC) {
 
 // question 6 Vowel Checker
 String vowelChecker(String alphabet) {
-  var vowel = ['a', 'e', 'i', 'o', 'u'];
+  Iterable vowel = ['a', 'e', 'i', 'o', 'u'];
   var result = 'Consonent';
-  for (var vw in vowel) {
+  for (String vw in vowel) {
     if (vw == alphabet) {
       result = "Vowel";
       break;
@@ -98,6 +113,7 @@ String vowelChecker(String alphabet) {
   return result;
 }
 
+// question 7 Electtricity Bill Checker
 double billCharges(int unit) {
   if (unit < 200) {
     return 1.20;
@@ -108,4 +124,15 @@ double billCharges(int unit) {
   } else {
     return 2.00;
   }
+}
+
+// question 8 Mark sheet
+class marksheet {
+  // selecting data type
+  String name;
+  num rollNumber;
+  List<String> subjects;
+  List<num> numbers;
+  
+
 }
